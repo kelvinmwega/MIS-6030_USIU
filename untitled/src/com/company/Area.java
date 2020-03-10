@@ -7,16 +7,8 @@ public class Area {
 
     Double radius1, radius2;
 
-    public Double getRadius1() {
-        return radius1;
-    }
-
     public void setRadius1(Double radius1) {
         this.radius1 = radius1;
-    }
-
-    public Double getRadius2() {
-        return radius2;
     }
 
     public void setRadius2(Double radius2) {
@@ -30,7 +22,7 @@ public class Area {
     public Double donutAreaCalculator() {
 
         if (this.radius1 < this.radius2) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Inner radius cannot be larger than outer radius");
         }
 
         return calculateArea(this.radius1) - calculateArea(this.radius2);

@@ -1,6 +1,5 @@
 package com.company;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -8,23 +7,15 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-//            assignment1();
-            assignment2();
+            assignment1();
         } catch (Exception e) {
-            System.out.println("!! WTF?? Check yourself before you wreck yourself !!!");
+            System.out.println(e.getMessage());
         }
 
     }
 
-    private static void assignment2(){
-        CoffeeBag coffeeBag = new CoffeeBag();
-        coffeeBag.setNumberOfBags(30);
-        coffeeBag.setUnitWeight(40.66);
-        coffeeBag.calculateTotalPrice();
-    }
-
     private static void assignment1() {
-        System.out.println("!! Do you love donuts? Here is a donut area calculator !!!");
+        System.out.println("!! Donut Area Calculator !!!");
 
         Scanner scanner = new Scanner(System.in);
         Area areaCalc = new Area();
@@ -33,7 +24,7 @@ public class Main {
         while(run){
             System.out.print("Enter Radius of outer circle in cm.. : ");
             areaCalc.radius1 = scanner.nextDouble();
-            System.out.print("Enter Radius of gt6inner circle in cm.. : ");
+            System.out.print("Enter Radius of inner circle in cm.. : ");
             areaCalc.radius2 = scanner.nextDouble();
 
             System.out.printf("%s%.2f%s", "The Area of your Donut is = ", areaCalc.donutAreaCalculator(), " cm squared\n");
@@ -55,5 +46,4 @@ public class Main {
 
         }
     }
-
 }
