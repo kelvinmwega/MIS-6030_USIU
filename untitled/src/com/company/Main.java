@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
@@ -7,11 +8,24 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            assignment1();
+            assignment2();
+            System.exit(0);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Invalid Entry!", "Error!", JOptionPane.ERROR_MESSAGE);
         }
 
+    }
+
+    private static void assignment2() {
+
+        double pricePerPound = 5.99;
+        double taxRate = 0.0725;
+
+        CoffeeBag coffeeBag = new CoffeeBag(pricePerPound, taxRate);
+        coffeeBag.setUnitWeight(Double.parseDouble(JOptionPane.showInputDialog(null, "Enter coffee bag unit weight in lb")));
+        coffeeBag.setNumberOfBags(Integer.parseInt(JOptionPane.showInputDialog(null, "Enter number of coffee bags")));
+        coffeeBag.calculateTotalPrice();
+        JOptionPane.showMessageDialog(null, coffeeBag.createDisplayMessage(), "Coffee Bag Receipt", JOptionPane.PLAIN_MESSAGE);
     }
 
     private static void assignment1() {
@@ -47,3 +61,5 @@ public class Main {
         }
     }
 }
+
+
